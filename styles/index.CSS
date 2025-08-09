@@ -24,19 +24,12 @@ body {
    width: 20%;
 }
 
-
-
-#JOGO{
-    
+.menu a {
     background-color: yellow;
     border-radius: 50%;
     margin-bottom: 10%;
     padding: 10%;
     font-size: 30px;
-    
-    
-  
-
 }
 
 #rank {

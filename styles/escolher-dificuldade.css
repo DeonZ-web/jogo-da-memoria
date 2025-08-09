@@ -36,7 +36,6 @@ body {
     color: yellow;
     border: 5px solid white;
     width: 50vh;
-    height: 50vh;
     position: relative;
     align-items: center;
     justify-content: center;
@@ -50,12 +49,13 @@ body {
 }
 
 .text {
-    
-    text-align: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
     color: yellow;
     justify-self: center;
-    max-width: 300px;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .ul {

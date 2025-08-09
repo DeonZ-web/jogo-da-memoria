@@ -291,7 +291,7 @@ function verificarFimDeJogo() {
         // Salva o tempo no localStorage
         localStorage.setItem('tempoPartida', tempoFinal);
         // Redireciona para o Leadboard
-        window.location.href = './Leadboard.html';
+        window.location.href = './leadboard.html';
     }
 }
 

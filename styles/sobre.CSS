@@ -57,8 +57,8 @@ body {
 .card-list {
     list-style: none;
 }
+
 .card-list .card-item .card-link {
-    
     width: 300px;
     position: relative;
     display: block;
@@ -231,12 +231,6 @@ body {
 }
 
 #gabriel:hover {
-    color: blue;
-    font-size: 70px;
-    transition: 0.2s ease ;
-}
-
-#tyler:hover {
     color: blue;
     font-size: 70px;
     transition: 0.2s ease ;
