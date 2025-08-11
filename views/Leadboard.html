@@ -13,12 +13,17 @@
   </style>
 </head>
 <body>
+
+  <div class="header-container">
+    <img class="sair" src="../public/images/retornar.png" alt="Sair" onclick="window.location.href='../index.html'">
     
-    <div><h1 id="titulo" style="color: yellow;">Leadeboard</h1>
-           <img class="sair" src="../public/images/retornar.png" alt="Sair" onclick="window.location.href='../index.html'">
-        </div>
+    <h1 style="color: yellow;" id="titulo">Leadeboard</h1>
+  </div>
+  
+
+
         <div id="colocados">
-        <ul id="colocados" style="color: yellow;">
+        <ul style="color: yellow;">
             1°<br>
             2°<br>
             3°<br>
@@ -32,8 +37,6 @@
         </ul>
         </div>
        
-
-
 <script>
     console.log('Script do Leadboard carregado');
     const tempoPartida = localStorage.getItem('tempoPartida');

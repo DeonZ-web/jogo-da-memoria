@@ -1,16 +1,23 @@
 body {
-    
-  background-image: url('../public/images/background-foda.jpg');  
-  background-repeat: no-repeat;
-  background-position: center; 
-  background-size: cover;
-  background-attachment: fixed; 
-}
-
-#titulo {
-    display: flex;
+    background-image: url('../public/images/background-foda.jpg');
+    margin: 0px;
     align-items: center;
     justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center; 
+    background-size: cover;
+    background-attachment: fixed; 
+}
+
+.header-container {
+    display: flex;
+}
+
+.header-container #titulo {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: relative;
 
 }
 
@@ -26,11 +33,11 @@ body {
 
 .sair {
     display: flex;
-    width: 20vh;
-    height: 25vh;
+    align-items: center;
+    justify-content: center;
+    max-height: 100px;
+    max-width: 100px;
     position: relative;
-    right: 5vh;
-    bottom: 14vh;
     cursor: pointer;
 }
 

@@ -1,6 +1,6 @@
 const devs = ['ian', 'ewerton', 'gabriel', 'adrielly'];
 let startIndex = 0; // início da janela visível
-const visibleCount = 2;
+const visibleCount = 3;
 
 function carousel(direction) {
   // calcula limites
