@@ -50,6 +50,10 @@ body {
     padding: 20px;
 }
 
+.card-list :hover {
+    font-size: 70px;
+}
+
 .card-list {
     transition: 0.2s ease;
 }
@@ -210,7 +214,6 @@ body {
 
 #trans:hover {
     color: blue;
-    font-size: 70px;
     transition: 0.2s ease ;
 }
 
@@ -221,24 +224,35 @@ body {
 
 #adrielly:hover {
     color: rgb(255, 255, 255);
-    font-size: 70px;
     transition: 0.2s ease ;
 }
 
 #ewerton:hover {
     color: blue;
-    font-size: 70px;
     transition: 0.2s ease ;
 }
 
 #gabriel:hover {
     color: blue;
-    font-size: 70px;
     transition: 0.2s ease ;
 }
 
 #ian:hover {
     color: blue;
-    font-size: 70px;
     transition: 0.2s ease ;
+}
+
+.objcontainer {
+
+}
+.objcontainer .objetivo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.objcontainer .objetivo {
+    color:  #ffbf0d;
+    text-shadow: 0px 0px 10px rgb(000, 000, 000);
 }
