@@ -12,7 +12,6 @@ body {
 }
 
 .header {
-    display: absolute;
     height: 10vh;
     width: 100%;
     margin-bottom: 20px;
@@ -32,7 +31,8 @@ body {
 }
 
 .border {
-    display: absolute;
+    display: flex;
+    flex-direction: column;
     color: yellow;
     border: 5px solid white;
     width: 50vh;
@@ -67,8 +67,7 @@ body {
     cursor: pointer;
     position: relative;
     top : 3vh;
-    left: 12vh;
-    background-color: transparent;
+        background-color: transparent;
     margin: 2vh;
 }
 
@@ -98,16 +97,21 @@ body {
     border-radius: 30vh;
     max-width: 20vh;
     align-items: center;
-}
+}   
+
+.placar {
+   
+    background-color: yellow;
+    border-radius: 30vh;
+    max-width: 20vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+} 
 
 .pl {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.placar {
-    background-color: yellow;
-    text-align: center;
-    border-radius: 5vh;
+    margin-top: 30px;
 }
