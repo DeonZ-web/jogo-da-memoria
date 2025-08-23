@@ -131,7 +131,6 @@ document.querySelectorAll('.peca').forEach(img => {
 });
 
 
-const contador = document.querySelector('.contador');
 let pontos = 0;
 
 function virarPeca(img) {
@@ -152,8 +151,8 @@ function virarPeca(img) {
             bloqueado = false;
             // Adiciona ponto ao acertar um par
             pontos += 100;
-            contador.textContent = pontos;
             verificarFimDeJogo(); // <-- Chame aqui!
+            
         } else {
             // desvira depois de 1s
             setTimeout(() => {
@@ -166,7 +165,6 @@ function virarPeca(img) {
             }, 1000);
         }
     }
-    console.log(pecasViradas);
 }
 
 
@@ -265,9 +263,13 @@ let tempoFinal = null;
 const temporizador = document.createElement('div');
 temporizador.className = 'temporizador';
 temporizador.style.fontSize = '2rem';
-temporizador.style.margin = '10px';
 temporizador.textContent = 'Tempo: 0s';
 temporizador.style.color = 'yellow';
+temporizador.style.width = '100%';
+temporizador.style.position = 'absolute';
+temporizador.style.top = '0';
+temporizador.style.textAlign = 'right';
+
 
 
 document.body.prepend(temporizador);
@@ -283,7 +285,7 @@ function iniciarTemporador() {
 iniciarTemporador();
 
 function verificarFimDeJogo() {
-    // Verifica se todas as peças estão viradas e escurecidas
+    // Verifica se todas as peças estão viradas
     const todasViradas = document.querySelectorAll('.peca.virada');
     if (todasViradas.length === cardsSelecionados.length) {
         clearInterval(intervalo);
@@ -291,7 +293,7 @@ function verificarFimDeJogo() {
         // Salva o tempo no localStorage
         localStorage.setItem('tempoPartida', tempoFinal);
         // Redireciona para o Placar
-        window.location.href = './Placar.html';
+        window.location.href = '../views/Placar.html';
     }
 }
 
