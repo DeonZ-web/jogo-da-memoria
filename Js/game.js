@@ -290,8 +290,8 @@ function verificarFimDeJogo() {
         tempoFinal = Math.floor((Date.now() - tempoInicio) / 1000);
         // Salva o tempo no localStorage
         localStorage.setItem('tempoPartida', tempoFinal);
-        // Redireciona para o Leadboard
-        window.location.href = './leadboard.html';
+        // Redireciona para o Placar
+        window.location.href = './Placar.html';
     }
 }
 

@@ -100,3 +100,14 @@ body {
     align-items: center;
 }
 
+.pl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.placar {
+    background-color: yellow;
+    text-align: center;
+    border-radius: 5vh;
+}

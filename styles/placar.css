@@ -27,7 +27,6 @@ body {
     justify-content: center;
     position: relative;
     right: 9vh;
-    bottom: 10vh;
     gap: 10vh;
 }
 
@@ -41,3 +40,10 @@ body {
     cursor: pointer;
 }
 
+#placar {
+     
+    text-align: center;
+    position: relative;
+    max-width: 30vh;
+    max-height: 30vh;
+}
