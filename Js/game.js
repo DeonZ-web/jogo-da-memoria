@@ -297,5 +297,12 @@ function verificarFimDeJogo() {
     }
 }
 
+function verificarDificuldade() {
+    // Verifica qual dificuldade foi escolhida ao terminar o jogo
+    const escolherDificuldade = document.getElementById('dificuldade');
+        if(dificuldade === ids) {
+            localStorage.setItem('dificuldadeEscolhida' )
+        }
+    }
 
 
