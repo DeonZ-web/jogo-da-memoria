@@ -243,7 +243,7 @@ body {
 }
 
 .objcontainer {
-
+    padding: 25%;
 }
 .objcontainer .objetivo {
     display: flex;
@@ -255,4 +255,17 @@ body {
 .objcontainer .objetivo {
     color:  #ffbf0d;
     text-shadow: 0px 0px 10px rgb(000, 000, 000);
+}
+
+#imgdogit {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    padding: 3px;
+}
+
+#linkdogit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
