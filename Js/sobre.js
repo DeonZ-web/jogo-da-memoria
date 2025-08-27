@@ -27,4 +27,12 @@ function carousel(direction) {
   }
 }
 
-// Chamar essa função ao carregar para iniciar
+// funcao pra scrollar o site com um botao 
+
+var btn = document.querySelector("#scroll");
+    btn.addEventListener ("click", function scrollToBottom() {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    });

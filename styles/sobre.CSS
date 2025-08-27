@@ -269,3 +269,26 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.scroll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    padding: 15px;
+
+}
+
+#scroll {
+    background: transparent;
+    box-shadow: none;
+    outline: none;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+#buttonscroll {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
