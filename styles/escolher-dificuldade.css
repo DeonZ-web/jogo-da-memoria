@@ -58,18 +58,6 @@ body {
     max-width: 100%;
 }
 
-.dificuldade {
-    display: flex;
-    width: 22vh;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
-    position: relative;
-    top : 3vh;
-        background-color: transparent;
-    margin: 2vh;
-}
 
 .fa{
   
@@ -99,15 +87,7 @@ body {
     align-items: center;
 }   
 
-.placar {
-   
-    background-color: yellow;
-    border-radius: 30vh;
-    max-width: 20vh;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-} 
+
 
 .pl {
     display: flex;

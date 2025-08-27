@@ -289,9 +289,21 @@ function verificarFimDeJogo() {
     const todasViradas = document.querySelectorAll('.peca.virada');
     if (todasViradas.length === cardsSelecionados.length) {
         clearInterval(intervalo);
-        tempoFinal = Math.floor((Date.now() - tempoInicio) / 1000);
-        // Salva o tempo no localStorage
-        localStorage.setItem('tempoPartida', tempoFinal);
+        var tempoFinal = Math.floor((Date.now() - tempoInicio) / 1000);        // Salva o tempo no localStorage
+        const times = JSON.parse(localStorage.getItem('tempoPartida') || '[]')
+
+        switch(dificuldadeSelecionada) {
+            case 'facil':
+                tempoFinal = 1 * tempoFinal
+                break
+            case 'medio':
+                tempoFinal = 10 * tempoFinal
+                break
+            default:
+                tempoFinal = 100 * tempoFinal
+                break
+        } 
+        localStorage.setItem('tempoPartida', JSON.stringify([...times, tempoFinal]));
         // Redireciona para o Placar
         window.location.href = '../views/Placar.html';
     }

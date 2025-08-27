@@ -29,7 +29,7 @@ body {
     border-radius: 50%;
     margin-bottom: 10%;
     padding: 10%;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #rank {
@@ -45,3 +45,26 @@ body {
     margin-bottom: 10%;
     padding: 10%;
 }
+
+.dificuldade {
+    display: flex;
+    width: 15   vh;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    top : 3vh;
+    background-color: transparent;
+    margin: 2vh;
+}
+
+#placar {
+   
+    background-color: yellow;
+    border-radius: 30vh;
+    max-width: 20vh;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+} 
