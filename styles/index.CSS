@@ -13,6 +13,7 @@ body {
 
 .tittle {
     font-size: 50px;
+    cursor: default;
 }
 .menu {
     display: flex;

@@ -29,10 +29,18 @@ function carousel(direction) {
 
 // funcao pra scrollar o site com um botao 
 
-var btn = document.querySelector("#scroll");
-    btn.addEventListener ("click", function scrollToBottom() {
+var btn = document.querySelector("#scroll-to-end");
+    btn.addEventListener ("click", () => {
       window.scrollTo({
         top: document.body.scrollHeight,
+        behavior: 'smooth'
+      });
+    });
+
+var secondBtn = document.querySelector("#scroll-to-top");
+    secondBtn.addEventListener ("click", () => {
+      window.scrollTo({
+        top: 0,
         behavior: 'smooth'
       });
     });

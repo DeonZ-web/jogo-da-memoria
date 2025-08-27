@@ -140,11 +140,18 @@ body {
     transform: rotate(180deg);
     
 }
+.justfy-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .header-container {
     display: block;
     align-items: center;
-    
+    position: relative;
+    width: 100%;
 }
 
 .container {
@@ -153,11 +160,15 @@ body {
     justify-content: center;
 }
 
+.sair-conteiner {
+    width: 100%;
+    position: absolute;
+}
+
 .sair {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     max-width: 100px;
     max-height: 100px;
     cursor: pointer;
@@ -168,6 +179,7 @@ body {
     gap: 5px;
     align-items: center;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .pc2 {
@@ -175,6 +187,7 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
+    cursor: default;
 }
 
 .pcImg {
@@ -243,7 +256,9 @@ body {
 }
 
 .objcontainer {
-    padding: 25%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
 }
 .objcontainer .objetivo {
     display: flex;
@@ -275,20 +290,29 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 100%;
-    padding: 15px;
-
+    width: 70px;
+    height: 70px;
 }
 
-#scroll {
-    background: transparent;
-    box-shadow: none;
-    outline: none;
+#scroll-to-end {
     border-radius: 100%;
     cursor: pointer;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+
+#scroll-to-top {
+    transform: rotate(180deg);
+    border-radius: 100%;
+    cursor: pointer;
+    border: none;
+    width: 40px;
+    height: 40px;
 }
 
 #buttonscroll {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 100%;
 }

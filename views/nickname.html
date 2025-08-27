@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div> 
+        
+        <h1>Área player</h1>
+        <h2>Coloque o nome do player</h2>
+    </div>
+        <div>
+    
+            <input id="nickname" type="player name">
+        </div>
+    <div>
+       <button onclick="nextPage()">
+        CONTINUAR
+       </button> 
+    </div>
+    
+    <script>
+
+        
+        function nextPage (){
+
+            var nick = document.getElementById("nickname")
+            if (nick.value=="") {
+               return 
+            }
+            window.location.assign("./escolher-dificuldade.html?nickname=" + nick.value)
+
+        }
+    
+    </script>
+</body>
+</html>

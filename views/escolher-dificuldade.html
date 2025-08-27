@@ -24,12 +24,19 @@
         </div>
         <div class="border">
             <h2 class="dif">Dificuldades</h2>
-            <a class="dificuldade"  style="text-decoration: none;" href="./jogar.html?dificuldade=facil"><h2 class="fa">Fácil</h2></a>
-            <a class="dificuldade"  style="text-decoration: none;" href="./jogar.html?dificuldade=medio"><h2 class="me">Médio</h2></a>
-            <a class="dificuldade"  style="text-decoration: none;" href="./jogar.html?dificuldade=dificil"><h2 class="di">Difícil</h2></a>
+            <span class="dificuldade" onclick="nextPage('facil')"><h2 class="fa">Fácil</h2></span>
+            <span class="dificuldade" onclick="nextPage('medio')"><h2 class="me">Médio</h2></span>
+            <span class="dificuldade" onclick="nextPage('dificil')"><h2 class="di">Difícil</h2></span>
         </div>
        
     </div>
    
+    <script>
+        function nextPage(dificuldade) {
+            const nick = new URLSearchParams(window.location.search).get('nickname');
+
+            window.location.assign(`./jogar.html?dificuldade=${dificuldade}&nickname=${nick}`)
+        }
+    </script>
 </body>
 </html>

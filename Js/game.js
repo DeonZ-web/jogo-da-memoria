@@ -290,7 +290,7 @@ function verificarFimDeJogo() {
     if (todasViradas.length === cardsSelecionados.length) {
         clearInterval(intervalo);
         var tempoFinal = Math.floor((Date.now() - tempoInicio) / 1000);        // Salva o tempo no localStorage
-        const times = JSON.parse(localStorage.getItem('tempoPartida') || '[]')
+        const times = JSON.parse(localStorage.getItem('tempoPartida') || '[]')        
 
         switch(dificuldadeSelecionada) {
             case 'facil':
@@ -302,8 +302,14 @@ function verificarFimDeJogo() {
             default:
                 tempoFinal = 100 * tempoFinal
                 break
-        } 
-        localStorage.setItem('tempoPartida', JSON.stringify([...times, tempoFinal]));
+        }
+
+        const nick = new URLSearchParams(window.location.search).get('nickname');
+
+        localStorage.setItem('tempoPartida', JSON.stringify([...times, {
+            nick,
+            points: tempoFinal
+        }]));
         // Redireciona para o Placar
         window.location.href = '../views/Placar.html';
     }
