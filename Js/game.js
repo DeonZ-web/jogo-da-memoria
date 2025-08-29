@@ -311,7 +311,7 @@ function verificarFimDeJogo() {
             points: tempoFinal
         }]));
         // Redireciona para o Placar
-        window.location.href = '../views/Placar.html';
+        window.location.href = '../views/placar.html';
     }
 }
 
