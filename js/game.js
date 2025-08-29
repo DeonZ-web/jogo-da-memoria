@@ -131,7 +131,7 @@ document.querySelectorAll('.peca').forEach(img => {
 });
 
 
-let pontos = 0;
+let pontos = 0; // Não será incrementado em virarPeca
 
 function virarPeca(img) {
     const tipo = img.getAttribute('data-peca');
@@ -149,10 +149,7 @@ function virarPeca(img) {
             peca2.img.style.filter = "brightness(0.7)";
             pecasViradas.length = 0;
             bloqueado = false;
-            // Adiciona ponto ao acertar um par
-            pontos += 100;
-            verificarFimDeJogo(); // <-- Chame aqui!
-            
+            verificarFimDeJogo();
         } else {
             // desvira depois de 1s
             setTimeout(() => {
@@ -257,7 +254,7 @@ document.querySelectorAll('.peca').forEach(img => {
 
 let tempoInicio = null;
 let intervalo = null;
-let tempoFinal = null;
+let tempoRestante = null;
 
 // Crie o elemento do temporizador
 const temporizador = document.createElement('div');
@@ -270,16 +267,35 @@ temporizador.style.position = 'absolute';
 temporizador.style.top = '0';
 temporizador.style.textAlign = 'right';
 
+// Crie o elemento do placar de pontos (opcional, para exibir na tela)
+const placar = document.createElement('div');
+placar.className = 'placar';
+placar.style.fontSize = '2rem';
+placar.style.color = 'yellow';
+placar.style.width = '100%';
+placar.style.position = 'absolute';
+placar.style.top = '40px';
+placar.style.textAlign = 'right';
 
+document.body.prepend(placar);
 
 document.body.prepend(temporizador);
 
-// Inicie o temporizador ao carregar o jogo
+
+
 function iniciarTemporador() {
-    tempoInicio = Date.now();
+    tempoRestante = parametros.tempo; // tempo inicial conforme dificuldade
+    temporizador.textContent = `Tempo: ${tempoRestante}s`;
     intervalo = setInterval(() => {
-        const tempoAtual = Math.floor((Date.now() - tempoInicio) / 1000);
-        temporizador.textContent = `Tempo: ${tempoAtual}s`;
+        tempoRestante--;
+        temporizador.textContent = `Tempo: ${tempoRestante}s`;
+        if (tempoRestante <= 0) {
+            clearInterval(intervalo);
+            temporizador.textContent = "Tempo esgotado!";
+            setTimeout(() => {
+                window.location.href = '../views/placar.html';
+            }, 1500);
+        }
     }, 1000);
 }
 iniciarTemporador();
@@ -289,39 +305,54 @@ function verificarFimDeJogo() {
     const todasViradas = document.querySelectorAll('.peca.virada');
     if (todasViradas.length === cardsSelecionados.length) {
         clearInterval(intervalo);
-        var tempoFinal = Math.floor((Date.now() - tempoInicio) / 1000);        // Salva o tempo no localStorage
-        const times = JSON.parse(localStorage.getItem('tempoPartida') || '[]')        
 
-        switch(dificuldadeSelecionada) {
+        // Calcula pontos com base no tempo restante e dificuldade
+        let multiplicador = 1;
+        switch (dificuldadeSelecionada) {
             case 'facil':
-                tempoFinal = 1 * tempoFinal
-                break
+                multiplicador = 1;
+                break;
             case 'medio':
-                tempoFinal = 10 * tempoFinal
-                break
-            default:
-                tempoFinal = 100 * tempoFinal
-                break
+                multiplicador = 10;
+                break;
+            case 'dificil':
+                multiplicador = 100;
+                break;
         }
+        pontos = tempoRestante * multiplicador; // Pontos só são definidos aqui!
+        placar.textContent = `Pontos: ${pontos}`;
 
+        // Salva os pontos no localStorage (corrigido para 'pontuacoes')
+        const scores = JSON.parse(localStorage.getItem('pontuacoes') || '[]');
         const nick = new URLSearchParams(window.location.search).get('nickname');
-
-        localStorage.setItem('tempoPartida', JSON.stringify([...times, {
+        localStorage.setItem('pontuacoes', JSON.stringify([...scores, {
             nick,
-            points: tempoFinal
+            points: pontos,
+            dificuldade: dificuldadeSelecionada
         }]));
+
         // Redireciona para o Placar
-        window.location.href = '../views/placar.html';
+        setTimeout(() => {
+            window.location.href = '../views/placar.html';
+        }, 1500);
     }
 }
 
+verificarFimDeJogo()
 
-function verificarDificuldade() {
-    // Verifica qual dificuldade foi escolhida ao terminar o jogo
-    const escolherDificuldade = document.getElementById('dificuldade');
-        if(dificuldade === ids) {
-            localStorage.setItem('dificuldadeEscolhida' )
-        }
-    }
+// Exemplo para placar.html
+const scores = JSON.parse(localStorage.getItem('pontuacoes') || '[]');
+const tabela = document.getElementById('tabela-placar'); // ou o elemento correto
+
+scores.reverse().forEach(score => {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+        <td>${score.nick || '-'}</td>
+        <td>${score.points}</td>
+        <td>${score.dificuldade}</td>
+    `;
+    tabela.appendChild(tr);
+});
+
 
 

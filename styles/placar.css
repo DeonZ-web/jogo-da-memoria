@@ -48,3 +48,18 @@ body {
     max-width: 30vh;
     max-height: 30vh;
 }
+
+#tabela-placar {
+    display: absolute;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    color: yellow;
+}
+
+.div-placar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
