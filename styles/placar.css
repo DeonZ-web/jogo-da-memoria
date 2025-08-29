@@ -1,5 +1,5 @@
 body {
-    background-image: url('../public/images/background-foda.jpg');
+    background-image: url('../public/images/background.jpg');
     margin: 0px;
     align-items: center;
     justify-content: center;
@@ -28,6 +28,7 @@ body {
     position: relative;
     right: 9vh;
     gap: 10vh;
+    cursor: default;
 }
 
 .sair {

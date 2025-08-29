@@ -1,0 +1,25 @@
+body {
+    background-image: url('../public/images/fundo-final.png');
+}
+
+.header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    color: yellow;
+}
+
+.nick{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+.botao {
+    background-color: yellow;
+     margin-top: 15px;
+     
+}

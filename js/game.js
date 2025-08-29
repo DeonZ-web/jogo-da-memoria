@@ -171,12 +171,12 @@ function virarPeca(img) {
 function mudarImagem(img) {
     const tipo = img.getAttribute('data-peca');
     
-    if (img.getAttribute("src") === "../public/images/fundo de Ina.png") {
+    if (img.getAttribute("src") === "../public/images/fundo das cartas.png") {
         const card = cards.find(card  => card.id === tipo)
 
         img.setAttribute("src", card.image)
     } else {
-        img.setAttribute("src", "../public/images/fundo de Ina.png");
+        img.setAttribute("src", "../public/images/fundo das cartas.png");
     }
 }
 
@@ -215,7 +215,7 @@ todasPecas.forEach((tipo, idx) => {
     img.setAttribute('data-peca', tipo);
     img.setAttribute('data-id', idx); 
     img.setAttribute('class', 'peca');
-    img.setAttribute('src', '../public/images/fundo de Ina.png');
+    img.setAttribute('src', '../public/images/fundo das cartas.png');
     tabuleiro.appendChild(img);
 });
 

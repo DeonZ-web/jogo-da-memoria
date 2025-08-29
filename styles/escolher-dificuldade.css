@@ -68,6 +68,8 @@ body {
     justify-content: center;
 }
 
+
+
 .fa:hover {
    
     transition: 0.2s ease;
@@ -98,4 +100,8 @@ body {
 
 .dificuldade {
     cursor: pointer;
+}
+
+.fa, .me, .di{
+    padding: 8px 16px;
 }

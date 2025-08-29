@@ -81,8 +81,9 @@ body {
   color: yellow;
   border: 5px solid rgb(255, 255, 255);
   padding: 20px;
+  cursor: default;
 }
 
-#l1:hover {
-  font-size: 25px;
+#l1 {
+  cursor: default;
 }

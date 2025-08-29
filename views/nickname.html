@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/nickname.css">
+    <title>Nick</title>
 </head>
 <body>
-    <div> 
+    <div class="header" style="cursor: default;"> 
         
         <h1>Área player</h1>
         <h2>Coloque o nome do player</h2>
     </div>
-        <div>
+        <div class="nick" style="cursor: default;">
     
-            <input id="nickname" type="player name">
+            <input id="nickname" type="player name" placeholder="Nick" maxlength="10">
+            <button class="botao" onclick="nextPage()">
+             CONTINUAR
+            </button> 
         </div>
-    <div>
-       <button onclick="nextPage()">
-        CONTINUAR
-       </button> 
-    </div>
+
     
     <script>
 
